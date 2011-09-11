@@ -60,6 +60,10 @@
                     	$('.tweet_link_' + i).append(['<small><a href="http://twitter.com/',item.user.screen_name,'/status/',item.id_str,'">',date_text,'</a></small>'].join('')) // fast concatination is your friend
 					}
                 });
+                if(typeof defaults.callback === 'function'){
+			        defaults.callback.call(this, data);
+			    }
+
                 //close the unordered list
              });
         });
